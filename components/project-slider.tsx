@@ -33,7 +33,7 @@ const projects: Project[] = [
     title: "LearnGenie – AI EdTech Assistant",
     description:
       "A personalized learning assistant that uses NLP and OpenAI to recommend study materials.",
-    tech: ["Python", "OpenAI API", "Flask", "NLP", "LangChain"],
+    tech: ["Python", "Flask", "NLP", "LangChain"],
     link: "#",
   },
   {
@@ -44,10 +44,10 @@ const projects: Project[] = [
     link: "#",
   },
   {
-    title: "AI Resume Filtering System",
+    title: "Recruit Edge - Company Automation Software",
     description:
       "A smart assistant using LLMs to analyze match profiles to job descriptions, and rank candidates based on fit.",
-    tech: ["Python", "NLP", "LangChain", "Flask", "OpenAI API"],
+    tech:["Flask", "React", "PostgreSQL", "LangChain", "TensorFlow", "MySQL"],
     link: "#",
   },
   {
@@ -55,6 +55,34 @@ const projects: Project[] = [
     description:
       "A generative AI tool that creates personalized travel itineraries based on user preferences, destinations, and budget.",
     tech: ["Python", "OpenAI API", "Streamlit", "Pandas"],
+    link: "#",
+  },
+  {
+    title: "Vizquery - Data explanation model",
+    description:
+      "An Agentic application for SQL Database Interaction and Visualisation",
+    tech: ["Python","Flask", "React", "PostgreSQL", "LangChain", "TensorFlow", "MySQL"],
+    link: "#",
+  },
+  {
+    title: "Data2Model - No code ML Model Training Platform",
+    description:
+      "A comprehensive ml platform for training different machine learning models with just one click.",
+    tech: ["Python", "TensorFlow", "Scikit-learn", "Flask" , "React"],
+    link: "#",
+  },
+  {
+    title: "Hindustani vs Carnatic Audio Classification",
+    description:
+      "Developed an ML model to classify Hindustani and Carnatic music using audio features. Deployed via Streamlit.",
+    tech: ["Python", "Librosa", "Scikitlearn", "Pandas" , "Streamlit"],
+    link: "#",
+  },
+  {
+    title: "Axion AI",
+    description:
+     "",  
+    tech: [],
     link: "#",
   },
 ];
