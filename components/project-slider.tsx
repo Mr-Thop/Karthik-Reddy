@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { Badge } from "@/components/ui/badge"
-import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react"
+import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
 interface Project {
@@ -12,8 +12,6 @@ interface Project {
   description: string
   tech: string[]
   link: string
-  github: string
-  image: string
 }
 
 const projects: Project[] = [
@@ -23,48 +21,36 @@ const projects: Project[] = [
       "Smart agriculture support for smallholder farmers. Full-stack implementation with AI-powered features.",
     tech: ["Flask", "React", "PostgreSQL", "LangChain", "TensorFlow"],
     link: "#",
-    github: "#",
-    image: "/placeholder.svg?height=300&width=500",
   },
   {
     title: "DealPool – Group-Based Offer Pooling",
     description: "Startup concept to pool shopping deals. Includes website and mobile app.",
     tech: ["React", "Node.js", "MongoDB"],
     link: "#",
-    github: "#",
-    image: "/placeholder.svg?height=300&width=500",
   },
   {
     title: "LearnGenie – AI EdTech Assistant",
     description: "Personalized learning recommendations using NLP & OpenAI API.",
     tech: ["Python", "OpenAI API", "Flask", "NLP"],
     link: "#",
-    github: "#",
-    image: "/placeholder.svg?height=300&width=500",
   },
   {
     title: "Sportans – Sports Analytics Platform",
     description: "ML-based performance insights and visualizations.",
     tech: ["Python", "TensorFlow", "Data Visualization"],
     link: "#",
-    github: "#",
-    image: "/placeholder.svg?height=300&width=500",
   },
   {
     title: "AI Resume Filtering System",
     description: "LLM/NLP-based smart resume screening system.",
     tech: ["Python", "NLP", "LangChain"],
     link: "#",
-    github: "#",
-    image: "/placeholder.svg?height=300&width=500",
   },
   {
     title: "Tourism Planner – Generative AI",
     description: "Personalized travel plans using OpenAI.",
     tech: ["Python", "OpenAI API", "Streamlit"],
     link: "#",
-    github: "#",
-    image: "/placeholder.svg?height=300&width=500",
   },
 ]
 
@@ -145,7 +131,7 @@ export default function ProjectSlider() {
       {/* Project Slider */}
       <div
         className="relative overflow-hidden"
-        style={{ height: "500px" }}
+        style={{ height: "400px" }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -156,29 +142,28 @@ export default function ProjectSlider() {
         >
           {projects.map((project, index) => (
             <div key={index} className="min-w-full px-4 flex-shrink-0">
-              <div className="card h-full flex flex-col overflow-hidden">
-                <div className="h-48 md:h-56 overflow-hidden">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
-                <div className="p-6 flex-grow">
-                  <h3 className="text-xl font-semibold mb-3 text-gray-900">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+              <div className="card h-full flex flex-col justify-between bg-white/80 backdrop-blur-sm border border-gray-100 hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+                <div className="flex-grow">
+                  <h3 className="text-2xl font-semibold mb-4 text-gray-900 group relative inline-block">
+                    <span className="hover:text-cyan-600 transition-colors duration-300 group-hover:text-cyan-600">
+                      {project.title}
+                    </span>
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                  </h3>
+                  <p className="text-gray-600 mb-6 text-lg">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="bg-cyan-100 text-cyan-700">
+                      <Badge
+                        key={techIndex}
+                        variant="secondary"
+                        className="bg-cyan-50 text-cyan-700 border border-cyan-100"
+                      >
                         {tech}
                       </Badge>
                     ))}
                   </div>
                 </div>
-                <div className="px-6 pb-6 flex justify-between items-center">
-                  <Link href={project.github} className="text-gray-600 hover:text-cyan-600 transition-colors">
-                    <Github className="h-5 w-5" />
-                  </Link>
+                <div className="flex justify-end">
                   <Link
                     href={project.link}
                     className="btn btn-outline py-2 px-4 flex items-center text-cyan-600 hover:text-cyan-700 font-medium"
