@@ -18,41 +18,47 @@ const projects: Project[] = [
   {
     title: "FarmIQ – AgriTech Platform",
     description:
-      "Smart agriculture support for smallholder farmers. Full-stack implementation with AI-powered features.",
-    tech: ["Flask", "React", "PostgreSQL", "LangChain", "TensorFlow"],
-    link: "#",
+      "An end-to-end platform empowering smallholder farmers with AI-powered analysis.",
+    tech: ["Flask", "React", "PostgreSQL", "LangChain", "TensorFlow", "MySQL"],
+    link: "#", 
   },
   {
     title: "DealPool – Group-Based Offer Pooling",
-    description: "Startup concept to pool shopping deals. Includes website and mobile app.",
-    tech: ["React", "Node.js", "MongoDB"],
+    description:
+      "Innovative startup concept that enables users to pool shopping deals with people for better bulk discounts.",
+    tech: ["React", "Node.js", "MongoDB", "Express", "TailwindCSS"],
     link: "#",
   },
   {
     title: "LearnGenie – AI EdTech Assistant",
-    description: "Personalized learning recommendations using NLP & OpenAI API.",
-    tech: ["Python", "OpenAI API", "Flask", "NLP"],
+    description:
+      "A personalized learning assistant that uses NLP and OpenAI to recommend study materials.",
+    tech: ["Python", "OpenAI API", "Flask", "NLP", "LangChain"],
     link: "#",
   },
   {
     title: "Sportans – Sports Analytics Platform",
-    description: "ML-based performance insights and visualizations.",
-    tech: ["Python", "TensorFlow", "Data Visualization"],
+    description:
+      "An ML-driven platform offering data analytics and visualizations for insights.",
+    tech: ["Python", "TensorFlow", "Matplotlib", "Pandas", "Scikit-learn"],
     link: "#",
   },
   {
     title: "AI Resume Filtering System",
-    description: "LLM/NLP-based smart resume screening system.",
-    tech: ["Python", "NLP", "LangChain"],
+    description:
+      "A smart assistant using LLMs to analyze match profiles to job descriptions, and rank candidates based on fit.",
+    tech: ["Python", "NLP", "LangChain", "Flask", "OpenAI API"],
     link: "#",
   },
   {
     title: "Tourism Planner – Generative AI",
-    description: "Personalized travel plans using OpenAI.",
-    tech: ["Python", "OpenAI API", "Streamlit"],
+    description:
+      "A generative AI tool that creates personalized travel itineraries based on user preferences, destinations, and budget.",
+    tech: ["Python", "OpenAI API", "Streamlit", "Pandas"],
     link: "#",
   },
-]
+];
+
 
 export default function ProjectSlider() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -164,13 +170,13 @@ export default function ProjectSlider() {
                   </div>
                 </div>
                 <div className="flex justify-end">
-                  <Link
+                  <a
                     href={project.link}
                     className="btn btn-outline py-2 px-4 flex items-center text-cyan-600 hover:text-cyan-700 font-medium"
                   >
                     View Project
                     <ExternalLink className="h-4 w-4 ml-2" />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
