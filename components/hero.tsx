@@ -75,7 +75,7 @@ export default function Hero() {
               style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
             >
               <img
-                src="/placeholder.svg?height=320&width=320"
+                src=".\Karthik.jpg"
                 alt="Karne Karthikeshwar Reddy"
                 className="w-full h-full object-cover"
               />

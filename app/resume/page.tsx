@@ -14,7 +14,7 @@ export default function ResumePage() {
             </Link>
           </Button>
           <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white dark:bg-blue-600 dark:hover:bg-blue-700">
-            <a href="/resume.pdf" download>
+            <a href="/Karthik.pdf" download>
               <Download className="mr-2 h-4 w-4" />
               Download PDF
             </a>

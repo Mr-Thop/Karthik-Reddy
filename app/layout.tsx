@@ -8,7 +8,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "Karne Karthikeshwar Reddy - AI Innovator & Startup Founder",
   description: "Portfolio of Karne Karthikeshwar Reddy, B.Tech AI & ML student, AI Developer, and Startup Founder.",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({

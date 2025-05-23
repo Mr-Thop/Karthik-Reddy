@@ -64,7 +64,7 @@ export default function Navbar() {
               asChild
               className="bg-blue-700 hover:bg-blue-800 text-white dark:bg-blue-600 dark:hover:bg-blue-700"
             >
-              <a href="/resume.pdf" download>
+              <a href="/Karthik.pdf" download>
                 Resume
               </a>
             </Button>
