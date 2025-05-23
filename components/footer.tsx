@@ -26,7 +26,7 @@ export default function Footer() {
                 <Github className="h-6 w-6" />
               </a>
               <a
-                href="https://linkedin.com/in/karthikeshwar-reddy"
+                href="https://www.linkedin.com/in/karthikeshwar-reddy-6011a8150"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-cyan-400 transition-colors"
