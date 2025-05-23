@@ -29,9 +29,9 @@ export default function GitHubStats({ username = "Mr-Thop", repo = "FarmIQ" }: {
         // Simulating API response with mock data
         setTimeout(() => {
           setStats({
-            stars: 42,
-            forks: 15,
-            watchers: 8,
+            stars: 7,
+            forks: 28,
+            watchers: 5,
           })
           setLoading(false)
         }, 1000)
