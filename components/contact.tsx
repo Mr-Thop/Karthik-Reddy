@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -16,32 +15,23 @@ export default function Contact() {
     message: "",
   })
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitSuccess, setSubmitSuccess] = useState(false)
-  const [submitError, setSubmitError] = useState("")
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitError("")
 
-    // Simulate form submission
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-      console.log("Form submitted:", formData)
-      setSubmitSuccess(true)
-      setFormData({ name: "", email: "", subject: "", message: "" })
-    } catch (error) {
-      setSubmitError("There was an error submitting the form. Please try again.")
-      console.error("Form submission error:", error)
-    } finally {
-      setIsSubmitting(false)
-    }
+    const { name, email, subject, message } = formData
+
+    const mailtoLink = `mailto:karthikreddy0314@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    )}`
+
+    window.location.href = mailtoLink
   }
 
   return (
@@ -105,113 +95,71 @@ export default function Contact() {
           <div className="scroll-trigger">
             <div className="card">
               <h3 className="text-2xl font-semibold mb-6">Send Me a Message</h3>
-              {submitSuccess ? (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-                  <p className="text-green-700">
-                    Thank you for your message! I'll get back to you as soon as possible.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {submitError && (
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-                      <p className="text-red-700">{submitError}</p>
-                    </div>
-                  )}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                        Your Name
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full border-gray-300 focus:border-cyan-400 focus:ring-cyan-400"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        Your Email
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full border-gray-300 focus:border-cyan-400 focus:ring-cyan-400"
-                      />
-                    </div>
-                  </div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                      Subject
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                      Your Name
                     </label>
                     <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
+                      id="name"
+                      name="name"
+                      value={formData.name}
                       onChange={handleChange}
                       required
                       className="w-full border-gray-300 focus:border-cyan-400 focus:ring-cyan-400"
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                      Message
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                      Your Email
                     </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      value={formData.message}
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
                       onChange={handleChange}
                       required
                       className="w-full border-gray-300 focus:border-cyan-400 focus:ring-cyan-400"
                     />
                   </div>
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-cyan-500 hover:bg-cyan-600 text-white"
-                  >
-                    {isSubmitting ? (
-                      <span className="flex items-center">
-                        <svg
-                          className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <circle
-                            className="opacity-25"
-                            cx="12"
-                            cy="12"
-                            r="10"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                          ></circle>
-                          <path
-                            className="opacity-75"
-                            fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                          ></path>
-                        </svg>
-                        Sending...
-                      </span>
-                    ) : (
-                      <span className="flex items-center justify-center">
-                        <Send className="mr-2 h-4 w-4" />
-                        Send Message
-                      </span>
-                    )}
-                  </Button>
-                </form>
-              )}
+                </div>
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                    Subject
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full border-gray-300 focus:border-cyan-400 focus:ring-cyan-400"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    Message
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="w-full border-gray-300 focus:border-cyan-400 focus:ring-cyan-400"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  className="w-full bg-cyan-500 hover:bg-cyan-600 text-white flex items-center justify-center"
+                >
+                  <Send className="mr-2 h-4 w-4" />
+                  Send Message
+                </Button>
+              </form>
             </div>
           </div>
         </div>
