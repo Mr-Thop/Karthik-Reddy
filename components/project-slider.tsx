@@ -19,7 +19,7 @@ const projects: Project[] = [
     description:
       "An end-to-end platform empowering smallholder farmers with AI-powered analysis.",
     tech: ["Flask", "React", "PostgreSQL", "LangChain", "TensorFlow", "MySQL"],
-    link: "#", 
+    link: "https://farmiq-zeta.vercel.app/", 
   },
   {
     title: "DealPool – Group-Based Offer Pooling",
@@ -33,21 +33,21 @@ const projects: Project[] = [
     description:
       "A personalized learning assistant that uses NLP and OpenAI to recommend study materials.",
     tech: ["Python", "Flask", "NLP", "LangChain"],
-    link: "#",
+    link: "https://learngenie.streamlit.app/",
   },
   {
     title: "Sportans – Sports Analytics Platform",
     description:
       "An ML-driven platform offering data analytics and visualizations for insights.",
     tech: ["Python", "TensorFlow", "Matplotlib", "Pandas", "Scikit-learn"],
-    link: "#",
+    link: "https://sportans.streamlit.app/",
   },
   {
     title: "Recruit Edge - Company Automation Software",
     description:
       "A smart assistant using LLMs to analyze match profiles to job descriptions, and rank candidates based on fit.",
     tech:["Flask", "React", "PostgreSQL", "LangChain", "TensorFlow", "MySQL"],
-    link: "#",
+    link: "http://recruitedge.vercel.app/",
   },
   {
     title: "Tourism Planner – Generative AI",
@@ -61,14 +61,14 @@ const projects: Project[] = [
     description:
       "An Agentic application for SQL Database Interaction and Visualisation",
     tech: ["Python","Flask", "React", "PostgreSQL", "LangChain", "TensorFlow", "MySQL"],
-    link: "#",
+    link: "https://vizquery.vercel.app/",
   },
   {
     title: "Data2Model - No code ML Model Training Platform",
     description:
       "A comprehensive ml platform for training different machine learning models with just one click.",
     tech: ["Python", "TensorFlow", "Scikit-learn", "Flask" , "React"],
-    link: "#",
+    link: "https://github.com/Mr-Thop/Data2Model",
   },
   {
     title: "Hindustani vs Carnatic Audio Classification",
@@ -78,11 +78,18 @@ const projects: Project[] = [
     link: "#",
   },
   {
+    title: "KRU AI",
+    description:
+     "A RAG Based Chatbot used to solve all the queries regarding SIT",  
+    tech: ["Python","Scikitlearn","Langchain","Flask","React","PYPdf"],
+    link: "https://kruai.vercel.app/",
+  },
+  {
     title: "Axion AI",
     description:
      "",  
     tech: [],
-    link: "#",
+    link: "https://axion-ai-ten.vercel.app/ ",
   },
 ];
 
