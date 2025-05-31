@@ -5,7 +5,6 @@ import type React from "react"
 import { useState } from "react"
 import { Badge } from "@/components/ui/badge"
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
-import Link from "next/link"
 
 interface Project {
   title: string
