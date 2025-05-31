@@ -22,13 +22,6 @@ const projects: Project[] = [
     link: "https://farmiq-zeta.vercel.app/", 
   },
   {
-    title: "DealPool – Group-Based Offer Pooling",
-    description:
-      "Innovative startup concept that enables users to pool shopping deals with people for better bulk discounts.",
-    tech: ["React", "Node.js", "MongoDB", "Express", "TailwindCSS"],
-    link: "#",
-  },
-  {
     title: "LearnGenie – AI EdTech Assistant",
     description:
       "A personalized learning assistant that uses NLP and OpenAI to recommend study materials.",
@@ -50,13 +43,6 @@ const projects: Project[] = [
     link: "http://recruitedge.vercel.app/",
   },
   {
-    title: "Tourism Planner – Generative AI",
-    description:
-      "A generative AI tool that creates personalized travel itineraries based on user preferences, destinations, and budget.",
-    tech: ["Python", "OpenAI API", "Streamlit", "Pandas"],
-    link: "#",
-  },
-  {
     title: "Vizquery - Data explanation model",
     description:
       "An Agentic application for SQL Database Interaction and Visualisation",
@@ -71,6 +57,20 @@ const projects: Project[] = [
     link: "https://github.com/Mr-Thop/Data2Model",
   },
   {
+    title: "KRU AI",
+    description:
+     "A RAG Based Chatbot used to solve all the queries regarding SIT",  
+    tech: ["Python","Scikitlearn","Langchain","Flask","React","PYPdf"],
+    link: "https://kruai.vercel.app/",
+  },
+  {
+    title: "DealPool – Group-Based Offer Pooling",
+    description:
+      "Innovative startup concept that enables users to pool shopping deals with people for better bulk discounts.",
+    tech: ["React", "Node.js", "MongoDB", "Express", "TailwindCSS"],
+    link: "#",
+  },
+  {
     title: "Hindustani vs Carnatic Audio Classification",
     description:
       "Developed an ML model to classify Hindustani and Carnatic music using audio features. Deployed via Streamlit.",
@@ -78,11 +78,11 @@ const projects: Project[] = [
     link: "#",
   },
   {
-    title: "KRU AI",
+    title: "Tourism Planner – Generative AI",
     description:
-     "A RAG Based Chatbot used to solve all the queries regarding SIT",  
-    tech: ["Python","Scikitlearn","Langchain","Flask","React","PYPdf"],
-    link: "https://kruai.vercel.app/",
+      "A generative AI tool that creates personalized travel itineraries based on user preferences, destinations, and budget.",
+    tech: ["Python", "OpenAI API", "Streamlit", "Pandas"],
+    link: "#",
   },
   {
     title: "Axion AI",
