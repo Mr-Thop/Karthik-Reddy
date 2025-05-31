@@ -60,7 +60,7 @@ export default function Header() {
           </div>
         </Link>
         <Link
-          href="/resume.pdf"
+          href="/Karthik.pdf"
           download
           className="px-4 py-2 border border-cyan-400 text-cyan-400 rounded hover:bg-cyan-400/10 transition-colors text-sm flex-shrink-0"
         >
